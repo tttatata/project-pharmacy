@@ -28,7 +28,6 @@ class _AuthScreenState extends State<AuthScreen> {
   final AuthService authService = AuthService();
   @override
   void dispose() {
-    // TODO: implement dispose
     super.dispose();
     _emailController.dispose();
     _passwordController.dispose();
@@ -47,7 +46,7 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void signInUser() {
-    authService.signInUser(
+    authService.signInpUser(
       context: context,
       phone: _phoneController.text,
       password: _passwordController.text,
@@ -97,7 +96,8 @@ class _AuthScreenState extends State<AuthScreen> {
               color: GlobalVariables.backgroundColor,
               child: Form(
                 key: _signUpFormKey,
-                child: Column(children: [
+                child: Column(
+                  children: [
                   CustomTextField(
                     controller: _nameController,
                     hintText: 'Họ Tên',
@@ -175,36 +175,7 @@ class _AuthScreenState extends State<AuthScreen> {
               ),
             ),
 
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     const SizedBox(width: 16),
-          //     // An example of the regular floating action button.
-          //     //
-          //     // https://m3.material.io/components/floating-action-button/specs#71504201-7bd1-423d-8bb7-07e0291743e5
-          //     FloatingActionButton.extended(
-          //       onPressed: () {
-          //         // Add your onPressed code here!
-          //       },
-          //       label: const Text('Đăng nhập ngay'),
-          //     ),
-          //   ],
-          // ),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: <Widget>[
-          //     const SizedBox(width: 16),
-          //     // An example of the regular floating action button.
-          //     //
-          //     // https://m3.material.io/components/floating-action-button/specs#71504201-7bd1-423d-8bb7-07e0291743e5
-          //     FloatingActionButton.extended(
-          //       onPressed: () {
-          //         // Add your onPressed code here!
-          //       },
-          //       label: const Text('Đăng Ký '),
-          //     ),
-          //   ],
-          // ),
+          
         ]),
       )),
     );

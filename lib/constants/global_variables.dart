@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // địa chỉ ip theo máy
-String uri = 'http://192.168.1.3:3000';
+String uri = 'http://192.168.13.224:3000';
 
 class GlobalVariables {
   // COLORS

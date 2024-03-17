@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:pharmacy_manager/constants/global_variables.dart';
 import 'package:pharmacy_manager/features/auth/screens/auth_screen.dart';
+import 'package:pharmacy_manager/providers/user_provider.dart';
 import 'package:pharmacy_manager/router.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(
+      create: (context) => UserProvider(),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
